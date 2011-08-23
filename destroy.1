@@ -1,0 +1,34 @@
+.Dd 23 January 2004
+.Os
+.Dt DESTROY 1 
+.Sh NAME
+.Nm Destroy 
+.Nd Destroy files from the harddisk in a secure manner.
+.Sh SYNOPSIS
+.Nm destroy 
+.Op Fl shq
+.Op Ar
+.Sh DESCRIPTION
+.Nm destroy 
+removes files from the harddrive by overwriting the file with NULL and Random bytes.  You may specify a regular file, or an enitre
+directory.  In addition you may specify a wild card to destroy certain file types or filename matches.
+.Pp
+The Options are as follows:
+.Bl -tag -width indent
+.It Fl s
+Security level: The number of times the file will be overwritten with NULL and Random bytes.  If you enter a value of 5, 10 alternating
+overwrites will happen: 5 NULL and 5 Random.  If this number is not entered on the command line, a default value for the security level will be 
+set to 7 as perscribed by the U.S. Department of Defense.  The lowest value accepted is 1, and the highest security value is 20.  
+NOTE: The higher the value, the longer the program might take to run.
+.It Fl f 
+Destroy with force -- Remove all types of files; do not skip over file types such as Sockets or Named Pipes.
+.It Fl q
+Run quietly -- Suppress all output from this application.  You might not want all this stuff flying by on the screen should the 
+fedz be trying to watch.
+.It Fl h
+Print help message and referance to this man page.
+.El
+.Sh BUGS
+There are no known bugs at this time, if you find a bug, please report it to: <modsix@gmail.com>
+.Sh AUTHOR
+.An Shane Kinney <modsix@gmail.com> | mod6 @ irc.freebsdhackers.net #freebsd | WWW: http://www.kinneysoft.com
